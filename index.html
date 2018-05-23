@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Solent Pizzas - The best pizza in Southampton</title>
+		<link type='text/css' rel='stylesheet' href='css/style.css'/>
+		<meta name="description" content="Solent Pizzas is the perfect place to get the tastiest pizza in Southampton. It is located in Solent University and it has a lot of promosions each month."/>
+		<link rel="icon" type="image/png" href="index_files/favicon.png">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Facebook sharing design -->
+		<meta property="og:title" content="Solent Pizzas - The best pizza in Southampton" />
+    	<meta property="og:type" content="article" />
+    	<meta property="og:url" content="http://www.solentpizzas.co.uk" />
+    	<meta property="og:image" content="https://www.maxpixel.net/static/photo/1x/Macro-Beautiful-Dough-Health-Tomato-Pizza-Food-2973200.jpg" />
+    	<meta property="og:description" content="Solent Pizzas is the perfect place to get the tastiest pizza in Southampton. It is located in Solent University. We provide good food, good service, small prices and promotions every month." /> 
+    
+		<!-- Twitter sharing design -->
+    	<meta name="twitter:card" content="summary">
+	    <meta name="twitter:site" content="@solent_pizzas">
+	    <meta name="twitter:title" content="Solent Pizzas - The best pizza in Southampton">
+	    <meta name="twitter:description" content="Solent Pizzas is the perfect place to get the tastiest pizza in Southampton. It is located in Solent University. We provide good food, good service, small prices and promotions every month.">
+	    <meta name="twitter:creator" content="@d">
+	    <meta name="twitter:image" content="https://www.maxpixel.net/static/photo/1x/Macro-Beautiful-Dough-Health-Tomato-Pizza-Food-2973200.jpg">
+    
+	</head>
+	<body onload="start()">
+		<div id="wrapper">
+			<header>
+				<div id="nav">
+					<ul>
+	                	<li><a href="index.html">Home</a></li>
+	                	<li><a href="order.html">Order</a></li>
+	                	<li><a href="contact.html">Contact</a></li>
+	            	</ul>
+            	</div>
+            	<div id="logo">
+            		<img src="index_files/logoimg.png" alt="Solent Pizzas logo">
+            	</div>
+			</header>
+			
+			<div class="slideshow-box">
+				<div class="mySlides fade">
+					<img src="index_files/best.png">
+					<div class="slide-text-big">The Best</div>
+					<div class="slide-text-small">PIZZA TO MAKE YOU FEEL GOOD</div>
+				</div>
+				
+				<div class="mySlides fade">
+					<img src="index_files/thediscover.png">
+					<div class="slide-text-big">Discover</div>
+					<div class="slide-text-small">A NEW WAY TO LOVE PIZZA</div>
+				</div>
+				
+				<div class="mySlides fade">
+					<img src="index_files/service.png">
+					<div class="slide-text-big">Fast Service</div>
+					<div class="slide-text-small">BEST PIZZA IN THE BEST ATMOSPHERE</div>
+				</div>
+			</div> <!-- closing .slideshow-box-->
+			
+			<!-- slideshow -->
+			<script type="text/javascript">
+			    var slideIndex=0;
+			    showSlide();
+			    function showSlide() {
+			        var i=0;
+			        var slides=document.getElementsByClassName("mySlides");
+			        for (i=0; i<slides.length; i++) {
+			            slides[i].style.display="none";
+			        }
+			        slideIndex++;
+			        if (slideIndex > slides.length) {
+			            slideIndex=1;
+			        }
+			        slides[slideIndex-1].style.display="block";
+			        setTimeout(showSlide,2000);
+			    }
+			    
+			</script>
+			
+			<div id="description">
+				<div id="text">
+					<h1>Excellent Restaurant Right In The Solent University</h1>
+					<h3>Come visit us for one of our awesome pizzas!</h3>
+					<p>Solent Pizzas is the perfect place to get the tastiest pizza in Southampton. We have good food, good service, small prices and promotions every month. We are a small restaurant in the Solent University. We try to make uni life much more attractive by providing the best pizza that you will ever try! Come along and try it! </p>
+				</div>
+				<div id="photo">
+					<img src="index_files/pizza.jpg" alt="First pizza photo" onmouseover="this.src='index_files/pizza2.jpg'" alt="Second pizza photo" 
+					onmouseout="this.src='index_files/pizza.jpg'"/>
+				</div>
+			</div>
+			
+			<div id="pre-footer">
+				<div id="footer-links-1">
+					<ul>
+	                	<li>ABOUT US</li>
+	                	<li><a href="#">ABOUT SOLENT PIZZAS</a></li>
+	                	<li><a href="#">STORE FINDER</a></li>
+	                	<li><a href="#">STUDENT DISCOUNT</a></li>
+	            	</ul>
+				</div>
+				<div id="footer-links-2">
+					<ul>
+	                	<li>HELP</li>
+	                	<li><a href="#">TRACK MY ORDER</a></li>
+	                	<li><a href="#">DELIVERY INFORMATION</a></li>
+	                	<li><a href="#">PAYMENT OPTIONS</a></li>
+	            	</ul>
+				</div>
+				<div id="subscribe">
+					<p>SUBSCRIBE TO THE SOLENT PIZZAS NEWSLETTER</p>
+					<p>To receive all the latest news and special offers.</p>
+					
+					<form id ="subscribe_email">
+						<p><input id="userEmail" type="email" placeholder = "Enter your email address">
+						<button onClick = displayMessage()> Subscribe </button></p>
+					</form>
+					
+					<!-- validate the email -->
+					<script type="text/javascript">
+						function displayMessage() {
+							var reg=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+				    		if (reg.test(subscribe_email.userEmail.value)==false) {
+								alert("Email is invalid!"); 
+				    		}
+							else {
+								alert("You have successfully subscribed to the newsletter!");
+							}
+						}
+					</script>  
+					
+				</div><!--closing #subscribe -->
+			</div> <!--closing #pre-footer -->
+			
+			<div id="footer">
+				<p>Copyright (c) 2018 solentpizzas.co.uk. All rights reserved.</p>
+				
+				<!--the date and hour-->
+				<span id='ct'></span>
+				<script type="text/javascript">
+					//shows the date
+					var currentDate = new Date();
+					var day = currentDate.getDate();
+					var month = currentDate.getMonth()+1; //+1 because it starts from 0
+					var year = currentDate.getFullYear();
+					if (month < 10 ) { 
+						month = "0"+month;}  //if the month is 1-9 to show a zero in front of it
+					document.write("and the date is "+ day+" / " + month + " / " + year + ".");
+				
+					//refreshes the hour
+					function refreshSeconds() {
+						var refresh=1000; //refresh rate in milli seconds
+						myTime=setTimeout('start()',refresh)} 
+				
+					//shows the hour
+					function start() {
+						var currentTime = new Date();
+						var hour = currentTime.getHours();
+						var minutes = currentTime.getMinutes();
+						var seconds = currentTime.getSeconds();
+						
+						if (minutes < 10) {
+							minutes = "0" + minutes;
+						}
+						if (seconds < 10) {
+							seconds = "0"+seconds;
+						}
+						//converts for AM or PM
+						var ampm = "AM";
+						if (hour >= 12) {
+							ampm = "PM";
+							hour = hour - 12; }
+						if (hour == 0 ) {
+							hour = 12; }
+							
+						var clock = "The hour is "+ hour + ":" + minutes + ":" +seconds+ " " + ampm;
+						
+						document.getElementById('ct').innerHTML=clock;
+						
+						tt=refreshSeconds();
+					}
+				</script>
+			</div> <!-- closing #footer -->
+			
+		</div><!--closing #wrapper -->
+	</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Solent Pizzas - Order the best pizza in Southampton</title>
+		<link type='text/css' rel='stylesheet' href='css/style-order.css'/>
+		<meta name="description" content="Order the tastiest pizza in Southampton! We have a fast service for delivering the order or you can takeaway it from our restaurant."/>
+		<link rel="icon" type="image/png" href="index_files/favicon.png">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Facebook sharing design -->
+		<meta property="og:title" content="Solent Pizzas - Order Page" />
+    	<meta property="og:type" content="article" />
+    	<meta property="og:url" content="http://www.solentpizzas.co.uk/order.html" />
+    	<meta property="og:image" content="https://www.maxpixel.net/static/photo/1x/Macro-Beautiful-Dough-Health-Tomato-Pizza-Food-2973200.jpg" />
+    	<meta property="og:description" content="Order the best pizza in Southampton! We have a fast service for delivery! Get in touch!" /> 
+    
+		<!-- Twitter sharing design -->
+    	<meta name="twitter:card" content="summary">
+	    <meta name="twitter:site" content="@solent_pizzas">
+	    <meta name="twitter:title" content="Solent Pizzas - Order Page">
+	    <meta name="twitter:description" content="Order the best pizza in Southampton! We have a fast service for delivery! Get in touch!">
+	    <meta name="twitter:creator" content="@d">
+	    <meta name="twitter:image" content="https://www.maxpixel.net/static/photo/1x/Macro-Beautiful-Dough-Health-Tomato-Pizza-Food-2973200.jpg">
+    
+	</head>
+	<body >
+		<div id="wrapper">
+			<header>
+				<div id="nav">
+					<ul>
+	                	<li><a href="index.html">Home</a></li>
+	                	<li><a href="order.html">Order</a></li>
+	                	<li><a href="contact.html">Contact</a></li>
+	            	</ul>
+            	</div>
+            	<div id="logo">
+            		<img src="index_files/logoimg.png" alt="Solent Pizzas logo">
+            	</div>
+			</header>
+			
+            <div class="slideshow-box">
+                <div class="mySlides fade">
+                    <img src="index_files/2 FOR THURS.png">
+                    <div class="slide-text">2 FOR THURSDAYS</div>
+                    <form>
+                        <input class="MyButton" type="button" value="Read more" onclick="window.location.href='#'" />
+                    </form>
+                </div>
+                <div class="mySlides fade">
+                    <img src="index_files/STUDENT DISCOUNT.png">
+                    <div class="slide-text">20% STUDENT DISCOUNT</div>
+                    <form>
+                        <input class="MyButton" type="button" value="Read more" onclick="window.location.href='#'" />
+                    </form>
+                </div>
+                <div class="mySlides fade">
+                    <img src="index_files/5 OFF.png">
+                    <div class="slide-text">£5 OFF WITH PROMOCODE</div>
+                    <form>
+                        <input class="MyButton" type="button" value="Read more" onclick="window.location.href='#'" />
+                    </form>
+                </div>
+            </div> <!-- closing .slideshow-box-->
+			
+			<!-- slideshow -->
+			<script type="text/javascript">
+			    var slideIndex=0;
+			    showSlide();
+			    function showSlide() {
+			        var i=0;
+			        var slides=document.getElementsByClassName("mySlides");
+			        for (i=0; i<slides.length; i++) {
+			            slides[i].style.display="none";
+			        }
+			        slideIndex++;
+			        if (slideIndex > slides.length) {
+			            slideIndex=1;
+			        }
+			        slides[slideIndex-1].style.display="block";
+			        setTimeout(showSlide,2000);
+			    }
+			</script>
+			
+			<div id="wrap">
+				<h1>Make your order!</h1>
+				<h3>We are happy to deliver you the pizza!</h3>
+
+                <div id="pizza">
+                    <form id="pizza-base" onchange="myTotal()">
+                        <p>Select your pizza base<span>*</span>:</p>
+                        <p><input type="radio" data-price="5"   data-human-desc="Small base" name="base" value="5" id="base_small" >Small: <span class="price">£5.00</span></p>
+                        <p><input type="radio" data-price="7.5" data-human-desc="Medium base" name="base" value="7.5" id="base_medium" >Medium: <span class="price">£7.50</span></p>
+                        <p><input type="radio" data-price="10"  data-human-desc="Large base" name="base" value="10" id="base_large" >Large: <span class="price">£10.00</span></p>
+                        <p><input type="radio" data-price="12.5" data-human-desc="X-Large base" name="base" value="12.5" id="base_xlarge" >X-Large: <span class="price">£12.50</span></p>
+                    	<p id="base_error" style="color: red; font-weight: bold"></p>    
+                    </form>
+                    
+                    <br>
+                    
+                    <form id="pizza-topping" onchange="myTotal()">
+                        <p>Select one or more topping<span>*</span>:</p>
+                        <p><input type="checkbox" data-price="0.2" data-human-desc="Cheese" name="topping" value="0.2" id="cheese" >Cheese: <span class="price">£0.20</span></p>
+                        <p><input type="checkbox" data-price="0.4" data-human-desc="Mushrooms" name="topping" value="0.4" id="mushrooms" >Mushrooms: <span class="price">£0.40</span></p>
+                        <p><input type="checkbox" data-price="0.5" data-human-desc="Ham" name="topping" value="0.5" id="ham">Ham: <span class="price">£0.50</span></p>
+                        <p><input type="checkbox" data-price="0.6" data-human-desc="Anchovies" name="topping" value="0.6" id="anchovies" >Anchovies: <span class="price">£0.60</span></p>
+                        <p id="topping_error" style="color: red; font-weight: bold"></p>
+                    </form>
+                    
+                    <br>
+                    
+                    <form id="pizza-extras" onchange="myTotal()">
+                        <p>Extras:</p>
+                        <p><input type="checkbox" data-price="1.5" data-human-desc="Chips" name="extras" value="1.5" id="chips">Chips: <span class="price">£1.50</span></p>
+                        <p><input type="checkbox" data-price="2" data-human-desc="Garlic Bread" name="extras" value="2" id="garlic_bread">Garlic Bread: <span class="price">£2.00</span></p>
+                    </form>
+                    
+                    <br>
+                    
+                    <form id="delivery" action="#" method="post">
+                        <p>Delivery Information<span>*</span>:</p>    
+					    <p> <label for="address">Address Line 1:</label> 
+					    <input type="text" name="address" id="address" onchange="myValidationPostCode()"> 
+					    <p id="address_error" style="color: red; font-weight: bold"></p>
+					    
+					    <p> <label for="postCode">Post Code:</label> 
+					    <input type="text" name="postCode" id="postCode" onchange="myValidationPostCode()"> 
+						<span id="good" style="display: none;">&#9989;</span>
+					    <span id="bad" style="display: none;">&#10060;</span>
+					    <p id="postCode_error" style="color: red; font-weight: bold"></p>
+					    </p>
+				    </form>
+				    
+				    <br>
+				    
+				    <!--clearing button -->
+				    <button onclick="
+				    document.getElementById('base_small').checked = ''; 
+				    document.getElementById('base_medium').checked = ''; 
+				    document.getElementById('base_large').checked = ''; 
+				    document.getElementById('base_xlarge').checked = ''; 
+				    document.getElementById('cheese').checked = '';
+				    document.getElementById('mushrooms').checked = '';
+				    document.getElementById('ham').checked = '';
+				    document.getElementById('anchovies').checked = '';
+				    document.getElementById('chips').checked = ''; document.getElementById('garlic_bread').checked = '';
+				    document.getElementById('address').value = ''; document.getElementById('postCode').value = '' 
+				    document.getElementById('good').style.display='none';
+					document.getElementById('summaryBase1').style.display='none';
+    	           	document.getElementById('summaryBase2').style.display='none';
+		           	document.getElementById('summaryBase3').style.display='none';
+		           	document.getElementById('summaryBase4').style.display='none';
+				    document.getElementById('summaryTopping1').style.display='none';
+    	           	document.getElementById('summaryTopping2').style.display='none';
+  			     	document.getElementById('summaryTopping3').style.display='none';
+    			   	document.getElementById('summaryTopping4').style.display='none';
+				    document.getElementById('summaryExtras1').style.display='none';
+    	           	document.getElementById('summaryExtras2').style.display='none';
+    	           	document.getElementById('total').style.display='none';
+    	           	document.getElementById('base_error').innerHTML = '';
+    	           	document.getElementById('topping_error').innerHTML = '';
+    	           	document.getElementById('address_error').innerHTML = '';
+    	           	document.getElementById('postCode_error').innerHTML = ''; ">Clear</button> <!-- Clears everything -->
+				    
+				    <button onClick=myErrors()>Place Order</button> <!-- Only if there are no errors -->
+
+				    <!-- Total price - real time validation -->
+				    <script type="text/javascript">
+    				    var itemValue;
+    				    var i;
+    				    var b;
+    				    var t;
+    				    var e;
+				        function myTotal() {
+				        	var suma=0;
+				            var pizza_base=document.getElementById("pizza-base");
+    				        for (i=0; i<pizza_base.base.length; i++) {
+    				            if (pizza_base.base[i].checked) {
+    				            	b=i;
+    				            	itemValue=parseFloat(pizza_base.base[i].value);
+    				                suma=itemValue+suma; //add value to the total value
+    				                if (b==0) { 
+    				                	document.getElementById("summaryBase1").style.display="block"; 
+    				                	document.getElementById("summaryBase2").style.display="none";
+    				                	document.getElementById("summaryBase3").style.display="none";
+    				                	document.getElementById("summaryBase4").style.display="none";
+    				                	document.getElementById('base_error').innerHTML = ''; //clears error
+    				                }
+    				                else {
+    				                	if (b==1) {
+    				                		document.getElementById("summaryBase1").style.display="none";
+    					                	document.getElementById("summaryBase2").style.display="block";
+    					                	document.getElementById("summaryBase3").style.display="none";
+    				    	            	document.getElementById("summaryBase4").style.display="none";
+    				    	            	document.getElementById('base_error').innerHTML = '';
+    				                	}
+    				                	else {
+    				                		if (b==2) {
+    				                			document.getElementById("summaryBase1").style.display="none";
+    							               	document.getElementById("summaryBase2").style.display="none";
+    				            		    	document.getElementById("summaryBase3").style.display="block";
+    				            			 	document.getElementById("summaryBase4").style.display="none";
+    				            			 	document.getElementById('base_error').innerHTML = '';
+    				                		}
+    				                		else {
+    				                			document.getElementById("summaryBase1").style.display="none";
+    						                	document.getElementById("summaryBase2").style.display="none";
+    						                	document.getElementById("summaryBase3").style.display="none";
+    				        		        	document.getElementById("summaryBase4").style.display="block";
+    				        		        	document.getElementById('base_error').innerHTML = '';
+    				                		}
+    				                	}
+    				                }
+    				            }
+    				        }
+    				        
+    				        var pizza_topping=document.getElementById("pizza-topping");
+    				        for (i=0; i<pizza_topping.topping.length; i++) {
+    				        	t=i;
+    				            if (pizza_topping.topping[i].checked) {
+    				            	itemValue=parseFloat(pizza_topping.topping[i].value);
+    				                suma=itemValue+suma;
+    				            }
+    				            
+    				            if (t==0 && pizza_topping.topping[i].checked) {
+    				            	document.getElementById("summaryTopping1").style.display="block";
+    				            	document.getElementById('topping_error').innerHTML = '';
+    				            }
+    				            else { 
+    				            	//if is not checked to disappear from summary
+    				            	if (t==0 && pizza_topping.topping[i].checked=='') {
+    				            		document.getElementById("summaryTopping1").style.display="none";}
+    				            }
+    		
+    				            if (t==1 && pizza_topping.topping[i].checked) {
+    				    	    	document.getElementById("summaryTopping2").style.display="block";
+    				            	document.getElementById('topping_error').innerHTML = '';
+    				            }
+    				            else {
+    				            	if (t==1 && pizza_topping.topping[i].checked=='') {
+    				            		document.getElementById("summaryTopping2").style.display="none";}
+    				            }
+    				                
+    				            if (t==2 && pizza_topping.topping[i].checked) {
+    						        document.getElementById("summaryTopping3").style.display="block";
+    				            	document.getElementById('topping_error').innerHTML = '';
+    				            }
+    				            else {
+    				            	if (t==2 && pizza_topping.topping[i].checked=='') {
+    				            		document.getElementById("summaryTopping3").style.display="none";}
+    				            }
+    				            
+    				            if (t==3 && pizza_topping.topping[i].checked) {
+    				            	document.getElementById("summaryTopping4").style.display="block";
+    				            	document.getElementById('topping_error').innerHTML = '';
+    				            }
+    				            else {
+    				            	if (t==3 && pizza_topping.topping[i].checked=='') {
+    						        	document.getElementById("summaryTopping4").style.display="none";}
+    				            }
+    				        }
+    				        
+    				        var pizza_extras=document.getElementById("pizza-extras");
+    				        for (i=0; i<pizza_extras.extras.length; i++) {
+    				        	e=i;
+    				            if (pizza_extras.extras[i].checked) {
+    				            	
+    				            	itemValue=parseFloat(pizza_extras.extras[i].value);
+    				                suma=itemValue+suma;
+    				            	}
+    				            	
+    				            if (pizza_extras.extras[i].checked && e==0) {
+    				                document.getElementById("summaryExtras1").style.display="block";}
+    				            
+    				            else {
+    				            	if (pizza_extras.extras[i].checked==''&& e==0) {
+    				                	document.getElementById("summaryExtras1").style.display="none";}
+    				            	}
+    				                
+    				            if (pizza_extras.extras[i].checked && e==1) {
+    				                document.getElementById("summaryExtras2").style.display="block";}
+    				                
+    				            else {
+    				            	if (pizza_extras.extras[i].checked==''&& e==1) {
+    				                	document.getElementById("summaryExtras2").style.display="none";}
+    				            	}
+    				        }
+    				        //shows result
+    				        document.getElementById("total").innerHTML=suma;
+				        }
+				    </script>
+				    
+				    <!--verifying errors-->
+				    <script type="text/javascript">
+				        function myErrors() {
+				        	var ok=1;
+    				        var error;
+    				        //checks if all of the bases are not checked and shows an error if so
+    				        if (document.getElementById('base_small').checked == '' && document.getElementById('base_medium').checked == '' && 
+    				        document.getElementById('base_large').checked == '' && document.getElementById('base_xlarge').checked == '') {
+    				            error="You need to select a base!";
+    				            document.getElementById("base_error").innerHTML = error;
+    				            ok=0; //blocks from sending the order
+    				            }
+    				        if (document.getElementById('cheese').checked == '' && document.getElementById('mushrooms').checked == '' && 
+    				        document.getElementById('ham').checked == '' && document.getElementById('anchovies').checked == '') {
+    				            error="You need to select at least one topping!";
+    				            document.getElementById("topping_error").innerHTML = error;
+    				            ok=0;
+    				            }
+    				        if (document.getElementById("address").value == '') {
+    				        	error="You need to add an address!";
+    				            document.getElementById("address_error").innerHTML = error;
+    				            ok=0;
+    				        }
+    				        if (document.getElementById("postCode").value.length<7 || document.getElementById("postCode").value.length>8) {
+    				        	error="Post Code is not valid!";
+    				            document.getElementById("postCode_error").innerHTML = error;
+    				            ok=0;
+    				        }
+    				        
+    				        //if there are no errors sends the order and clears everthing
+    				        if (ok==1) {
+    				       		alert ("Order was sent! Thank you!");
+    				       		document.getElementById('base_small').checked = ''; 
+				    			document.getElementById('base_medium').checked = ''; 
+				    			document.getElementById('base_large').checked = ''; 
+							    document.getElementById('base_xlarge').checked = ''; 
+							    document.getElementById('cheese').checked = '';
+							    document.getElementById('mushrooms').checked = '';
+							    document.getElementById('ham').checked = '';
+							    document.getElementById('anchovies').checked = '';
+							    document.getElementById('chips').checked = ''; 
+							    document.getElementById('garlic_bread').checked = '';
+							    document.getElementById('address').value = ''; 
+							    document.getElementById('postCode').value = ''; 
+							    document.getElementById("good").style.display="none";
+							    document.getElementById("summaryBase1").style.display="none";
+    				           	document.getElementById("summaryBase2").style.display="none";
+    				           	document.getElementById("summaryBase3").style.display="none";
+    				           	document.getElementById("summaryBase4").style.display="none";
+							    document.getElementById("summaryTopping1").style.display="none";
+    				           	document.getElementById("summaryTopping2").style.display="none";
+    				           	document.getElementById("summaryTopping3").style.display="none";
+    				           	document.getElementById("summaryTopping4").style.display="none";
+							    document.getElementById("summaryExtras1").style.display="none";
+    				           	document.getElementById("summaryExtras2").style.display="none";
+    				           	document.getElementById("total").style.display="none";
+    				           	document.getElementById("base_error").innerHTML = '';
+    				           	document.getElementById("topping_error").innerHTML = '';
+    				           	document.getElementById("address_error").innerHTML = '';
+    				           	document.getElementById("postCode_error").innerHTML = ''; //clears everything
+    				       }
+				        }
+				    </script>
+
+		            <!--real time validation FOR THE POST CODE-->
+					<script javascript="text/javascript">
+						function myValidationPostCode() {
+							//verifies in real time the post code and shows a cross or a tick
+							var x=document.getElementById("postCode").value;
+							var good=document.getElementById("good");
+						    var bad=document.getElementById("bad");
+							if (x=="") {
+								document.getElementById("bad").style.display="inline";
+						    	document.getElementById("good").style.display="none";
+							}
+							else {
+							//an usual post code is formed from 6 or 7 (with space) characters 
+							if (x.length<7 || x.length>8) {
+								document.getElementById("bad").style.display="inline";
+						    	document.getElementById("good").style.display="none";
+							    }
+							else {
+								document.getElementById("bad").style.display="none";
+						    	document.getElementById("good").style.display="inline";
+						    	document.getElementById('postCode_error').innerHTML = '';
+							    }
+							}
+							if (document.getElementById("address").value != '') {
+    				        	document.getElementById('address_error').innerHTML = '';
+    				        }
+						}
+					</script>
+
+				</div> <!-- closing #pizza -->
+				
+			    <div id="summary">
+					<p>Order Summary</p>
+					<p id="summaryBase1" style="display: none;">Small Base - £5.00</p>
+					<p id="summaryBase2" style="display: none;">Medium Base - £7.50</p>
+					<p id="summaryBase3" style="display: none;">Large Base - £10.00</p>
+					<p id="summaryBase4" style="display: none;">X-Large Base - £12.50</p>
+					<p id="summaryTopping1" style="display: none;">Cheese - £0.20</p>
+					<p id="summaryTopping2" style="display: none;">Mushrooms - £0.40</p>
+					<p id="summaryTopping3" style="display: none;">Ham - £0.50</p>
+					<p id="summaryTopping4" style="display: none;">Anchovies - £0.60</p>
+					<p id="summaryExtras1" style="display: none;">Chips - £1.50</p>
+					<p id="summaryExtras2" style="display: none;">Garlic Bread - £2.00</p>
+					<p>Total: £<span id="total"></span></p>
+				</div>	<!--closing #summary -->			
+			
+			</div> <!--closing #wrap-->
+			
+			<div id="pre-footer">
+				<div id="footer-links-1">
+					<ul>
+	                	<li>ABOUT US</li>
+	                	<li><a href="#">ABOUT SOLENT PIZZAS</a></li>
+	                	<li><a href="#">STORE FINDER</a></li>
+	                	<li><a href="#">STUDENT DISCOUNT</a></li>
+	            	</ul>
+				</div>
+				<div id="footer-links-2">
+					<ul>
+	                	<li>HELP</li>
+	                	<li><a href="#">TRACK MY ORDER</a></li>
+	                	<li><a href="#">DELIVERY INFORMATION</a></li>
+	                	<li><a href="#">PAYMENT OPTIONS</a></li>
+	            	</ul>
+				</div>
+				
+				<div id="subscribe">
+					<p>SUBSCRIBE TO THE SOLENT PIZZAS NEWSLETTER</p>
+					<p>To receive all the latest news and special offers.</p>
+					
+					<form id ="subscribe_email">
+						<p><input id="userEmail" type="email" placeholder = "Enter your email address">
+						<button onClick = displayMessage()> Subscribe </button></p>
+					</form>
+					
+					<!--validate the email-->
+					<script type="text/javascript">
+						function displayMessage() {
+							var reg=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+				    		if (reg.test(subscribe_email.userEmail.value)==false) {
+								alert("Email is invalid!"); 
+				    		}
+							else {
+								alert("You have successfully subscribed to the newsletter!");
+							}
+						}
+					</script>  
+					
+				</div> <!--closing #subscribe -->
+			</div> <!-- closing #pre-footer -->
+			
+			<div id="footer">
+				<p>Copyright (c) 2018 solentpizzas.co.uk. All rights reserved.</p>
+			</div>
+		</div><!--closing #wrapper-->
+	</body>
+</html>

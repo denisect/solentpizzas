@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Solent Pizzas - Get in touch with us</title>
+		<link type='text/css' rel='stylesheet' href='css/style-contact.css'/>
+		<meta name="description" content="Get in touch with us! Do you have any suggestions, problems? Write us a message!"/>
+		<link rel="icon" type="image/png" href="index_files/favicon.png">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Facebook sharing design -->
+		<meta property="og:title" content="Solent Pizzas - Contact Page" />
+    	<meta property="og:type" content="article" />
+    	<meta property="og:url" content="http://www.solentpizzas.co.uk/contact.html" />
+    	<meta property="og:image" content="https://www.maxpixel.net/static/photo/1x/Macro-Beautiful-Dough-Health-Tomato-Pizza-Food-2973200.jpg" />
+    	<meta property="og:description" content="Get in touch with us! Do you have any suggestions, problems? Write us a message!" /> 
+    
+		<!-- Twitter sharing design -->
+    	<meta name="twitter:card" content="summary">
+	    <meta name="twitter:site" content="@solent_pizzas">
+	    <meta name="twitter:title" content="Solent Pizzas - Contact Page">
+	    <meta name="twitter:description" content="Get in touch with us! Do you have any suggestions, problems? Write us a message!">
+	    <meta name="twitter:creator" content="@d">
+	    <meta name="twitter:image" content="https://www.maxpixel.net/static/photo/1x/Macro-Beautiful-Dough-Health-Tomato-Pizza-Food-2973200.jpg">
+    
+	</head>
+	<body onload="main()">
+		<div id="wrapper">
+			<header>
+				<div id="nav">
+					<ul>
+	                	<li><a href="index.html">Home</a></li>
+	                	<li><a href="order.html">Order</a></li>
+	                	<li><a href="contact.html">Contact</a></li>
+	            	</ul>
+            	</div>
+            	<div id="logo">
+            		<img src="index_files/logoimg.png" alt="Solent Pizzas logo">
+            	</div>
+			</header>
+			
+            <div class="slideshow-box">
+                <div class="mySlides fade">
+                    <img src="index_files/2 FOR THURS.png">
+                    <div class="slide-text">2 FOR THURSDAYS</div>
+                    <form>
+                        <input class="MyButton" type="button" value="Read more" onclick="window.location.href='#'" />
+                    </form>
+                </div>
+                <div class="mySlides fade">
+                    <img src="index_files/STUDENT DISCOUNT.png">
+                    <div class="slide-text">20% STUDENT DISCOUNT</div>
+                    <form>
+                        <input class="MyButton" type="button" value="Read more" onclick="window.location.href='#'" />
+                    </form>
+                </div>
+                <div class="mySlides fade">
+                    <img src="index_files/5 OFF.png">
+                    <div class="slide-text">£5 OFF WITH PROMOCODE</div>
+                    <form>
+                        <input class="MyButton" type="button" value="Read more" onclick="window.location.href='#'" />
+                    </form>
+                </div>
+            </div> <!-- closing .slideshow-box-->
+			
+			<!-- slideshow -->
+			<script type="text/javascript">
+			    var slideIndex=0;
+			    showSlide();
+			    function showSlide() {
+			        var i=0;
+			        var slides=document.getElementsByClassName("mySlides");
+			        for (i=0; i<slides.length; i++) {
+			            slides[i].style.display="none";
+			        }
+			        slideIndex++;
+			        if (slideIndex > slides.length) {
+			            slideIndex=1;
+			        }
+			        slides[slideIndex-1].style.display="block";
+			        setTimeout(showSlide,2000);
+			    }
+			</script>
+			
+			<div id="wrap">
+				<h1>Get in touch with us!</h1>
+				<h3>Do you have any suggestions, problems? Write us a message!</h3>
+	
+				<div id="map" style="width:98%;height:300px; position: relative;"></div>
+				
+				<!-- MAP javascript-->
+	    		<script type="text/javascript">
+	    			function initMap() {
+	        			var uluru = {lat: 50.908, lng: -1.401};
+	        			var map = new google.maps.Map(document.getElementById('map'), {
+	        				zoom: 17,
+	        				center: uluru
+	        				});
+	        			var marker = new google.maps.Marker({
+	        				position: uluru,
+	        				map: map,
+	        				title: 'Solent Pizzas'
+	        				});
+	    			}
+	    		</script>
+	    		
+				<!--my API-->
+				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJioOpm4ZzusPjPi4N4uW3umVH6LrkV8o&callback=initMap"></script>
+				
+				<div id="address-phone">
+					<div id="address">
+						<h4>Address:</h4>
+						<p>Southampton Solent University</p>
+						<p>East Park Terrace</p>
+						<p>SO14 0YN</p>
+					</div>
+								
+					<div id="phones">
+						<h4>Contact numbers:</h4>
+						<p>+44 7423 456 789</p>
+						<p>+44 7412 345 690</p>
+						<p>+44 7435 542 654</p>
+					</div>
+				</div>
+				<br><br>
+				 
+				<h3>Contact form</h3>
+				<div id="contact-form">
+				    <form id="contact" action="#" method="post">    
+					    <p> <label for="first_name" >First name<span>*</span>:</label> 
+					    <input type="text" name="first_name" id="first_name" onchange="myValidation()"> 
+					    <span id="userFirstNameRequiredError" style="display: none; color: red" >Is required!</span>
+						<span id="good" style="display: none;">&#9989;</span>
+					    <span id="bad"style="display: none;">&#10060;</span>
+					    </p>
+					    
+					    <p> <label for="last_name">Last name<span>*</span>:</label> <input type="text" name="last_name" id="last_name" onchange="myValidation()">
+					    <span id="userLastNameRequiredError" style="display: none; color: red">Is required!</span>
+					    <span id="good2" style="display: none;">&#9989;</span>
+					    <span id="bad2"style="display: none;">&#10060;</span>
+					    </p>
+					    
+					    <p> <label for="user_email">Email<span>*</span>:</label> <input type="text" name="user_email" id="user_email" onchange="myValidation()">
+					    <span id="userEmailRequiredError" style="display: none; color: red">Is required!</span>
+					    <span id="good3" style="display: none;">&#9989;</span>
+					    <span id="bad3"style="display: none;">&#10060;</span>
+					    </p>
+					    
+					    <p> <label for="phone">Phone:</label> <input type="text" name="phone" id="phone" onchange="myValidation()">
+					    <span id="userPhoneRequiredError" style="display: none; color: red">Check again!</span>
+					    <span id="good5" style="display: none;">&#9989;</span>
+					    <span id="bad5"style="display: none;">&#10060;</span>
+					    </p>
+					    
+					    <p><label  for="message"> Enter a message<span>*</span>: </label></p>
+					    <p><textarea name="message" rows="5" cols="47" id="message" onchange="myValidation()"></textarea>
+					    <span id="userMessageRequiredError" style="display: none; color: red">Is required!</span>
+					    <span id="good4" style="display: none;">&#9989;</span>
+					    <span id="bad4"style="display: none;">&#10060;</span>
+					    </p>
+					    
+					    <p><input type="submit" name="Send" value="Send"></p>
+					</form>
+				</div><!--closing #contact-form -->	
+			
+			
+				<!-- Validate the form -->
+				<script javascript="text/javascript">
+					 //onload callback function
+					 function main() {
+					    var myForm  = document.getElementById("contact");
+					    myForm.addEventListener("submit",validateForm);
+					  }
+					
+					  //validate callback function 
+					  function validateForm(event) {
+					    var formValid = true;
+					    var myForm = document.getElementById("contact"); 
+					
+					    if (myForm.first_name.value == "") {
+					        formValid = false;
+					        //display error message 
+					        document.getElementById("userFirstNameRequiredError").style.display = "block";
+					        document.getElementById("bad").style.display="none";
+					        //stop form from submitting
+					        event.preventDefault();
+					    } 
+					    else {
+					         document.getElementById("userFirstNameRequiredError").style.display = "none";
+					    }
+	
+					   
+					    if (myForm.last_name.value == "") {
+					        formValid = false;
+					        document.getElementById("userLastNameRequiredError").style.display = "block";
+					        event.preventDefault();
+					    } 
+					    else {
+					         document.getElementById("userLastNameRequiredError").style.display = "none";
+					    }
+					    
+					    var regno=/^[0-9]*$/;
+					    if (myForm.phone.value=="") {
+					         document.getElementById("userPhoneRequiredError").style.display = "none"; //initial show as nothing
+					    }
+					    else {
+					    	if (myForm.phone.value.length <9 || myForm.phone.value.length>14 || regno.test(myForm.phone.value)==false) {
+					        formValid = false;
+					        document.getElementById("userPhoneRequiredError").style.display = "block";
+					        event.preventDefault();
+					    } 
+					    else {
+					    	document.getElementById("userPhoneRequiredError").style.display = "none";}
+					    }
+					    
+					    
+					    if (myForm.message.value == "") {
+					        formValid = false;
+					        document.getElementById("userMessageRequiredError").style.display = "block";
+					        event.preventDefault();
+					    } 
+					    else {
+					         document.getElementById("userMessageRequiredError").style.display = "none";
+					    }
+					    
+					    //if is nothing introduced, shows an error
+					    if (myForm.user_email.value == "") {
+					    	formValid = false;
+					        document.getElementById("userEmailRequiredError").style.display = "block";
+					       	event.preventDefault();}
+					    //using regular expression for making the validation of email
+					    var reg=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+					    if (reg.test(myForm.user_email.value)==false) {
+					    	document.getElementById("userEmailRequiredError").style.display = "block";
+					       	event.preventDefault();
+					    }
+					    else {
+					    	document.getElementById("userEmailRequiredError").style.display = "none";
+					    }
+					    
+					  }
+				</script> <!-- closing [validate the form] -->
+				
+				<!--real time validation-->
+				<script javascript="text/javascript">
+					function myValidation() {
+						var x=document.getElementById("first_name").value;
+						var good=document.getElementById("good");
+					    var bad=document.getElementById("bad");
+						if (x=="") {
+							document.getElementById("first_name").style.backgroundColor = "red";
+							document.getElementById("bad").style.display="inline";
+					    	document.getElementById("good").style.display="none";
+						}
+						else {
+							document.getElementById("first_name").style.backgroundColor = "";
+							document.getElementById("bad").style.display="none";
+					    	document.getElementById("good").style.display="inline";
+						}
+						
+						var y=document.getElementById("last_name").value;
+						var good2=document.getElementById("good2");
+					    var bad2=document.getElementById("bad2");
+						if (y=="") {
+							document.getElementById("last_name").style.backgroundColor = "red";
+							document.getElementById("bad2").style.display="inline";
+					    	document.getElementById("good2").style.display="none";
+						}
+						else {
+							document.getElementById("last_name").style.backgroundColor = "";
+							document.getElementById("bad2").style.display="none";
+					    	document.getElementById("good2").style.display="inline";
+						}
+						
+						var z=document.getElementById("user_email").value;
+						var good3=document.getElementById("good3");
+					    var bad3=document.getElementById("bad3");
+						if (z=="") {
+							document.getElementById("user_email").style.backgroundColor = "red";
+							document.getElementById("bad3").style.display="inline";
+					    	document.getElementById("good3").style.display="none";
+						}
+						else { 
+							var reg=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+							if (reg.test(z)==false) {
+								document.getElementById("user_email").style.backgroundColor = "red";
+								document.getElementById("bad3").style.display="inline";
+					    		document.getElementById("good3").style.display="none";
+								}
+							else {
+							document.getElementById("user_email").style.backgroundColor = "";
+							document.getElementById("bad3").style.display="none";
+					    	document.getElementById("good3").style.display="inline";
+							}
+						}
+						
+						var w=document.getElementById("message").value;
+						if (w=="") {
+							document.getElementById("message").style.backgroundColor = "red";
+							document.getElementById("bad4").style.display="inline";
+					    	document.getElementById("good4").style.display="none";
+						}
+						else {
+							document.getElementById("message").style.backgroundColor = "";
+							document.getElementById("bad4").style.display="none";
+					    	document.getElementById("good4").style.display="inline";
+						}
+						
+						var p=document.getElementById("phone").value;
+						var good5=document.getElementById("good5");
+						var good5=document.getElementById("good5");
+						var regno=/^[0-9]*$/;
+						if (p=="") {
+					    		document.getElementById("phone").style.backgroundColor = "";
+								document.getElementById("bad5").style.display="none";
+					    		document.getElementById("good5").style.display="none";
+						}
+					    else {
+					    	if (p.length <9 || p.length>14 || regno.test(p)==false ) {
+					        document.getElementById("phone").style.backgroundColor = "red";
+							document.getElementById("bad5").style.display="inline";
+					    	document.getElementById("good5").style.display="none";
+					    } else {
+					        document.getElementById("phone").style.backgroundColor = "";
+							document.getElementById("bad5").style.display="none";
+					    	document.getElementById("good5").style.display="none";
+					    	}
+					    }
+					}
+				</script><!--closing [real time validation] -->
+			</div> <!--closing #wrap -->
+			
+			<div id="pre-footer">
+				<div id="footer-links-1">
+					<ul>
+	                	<li>ABOUT US</li>
+	                	<li><a href="#">ABOUT SOLENT PIZZAS</a></li>
+	                	<li><a href="#">STORE FINDER</a></li>
+	                	<li><a href="#">STUDENT DISCOUNT</a></li>
+	            	</ul>
+				</div>
+				<div id="footer-links-2">
+					<ul>
+	                	<li>HELP</li>
+	                	<li><a href="#">TRACK MY ORDER</a></li>
+	                	<li><a href="#">DELIVERY INFORMATION</a></li>
+	                	<li><a href="#">PAYMENT OPTIONS</a></li>
+	            	</ul>
+				</div>
+				
+				<div id="subscribe">
+					<p>SUBSCRIBE TO THE SOLENT PIZZAS NEWSLETTER</p>
+					<p>To receive all the latest news and special offers.</p>
+					
+					<form id ="subscribe_email">
+						<p><input id="userEmail" type="email" placeholder = "Enter your email address">
+						<button onClick = displayMessage()> Subscribe </button></p>
+					</form>
+					
+					<!--validate the email-->
+					<script type="text/javascript">
+						function displayMessage() {
+							var reg=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+				    		if (reg.test(subscribe_email.userEmail.value)==false) {
+								alert("Email is invalid!"); 
+				    		}
+							else {
+								alert("You have successfully subscribed to the newsletter!");
+							}
+						}
+					</script>   
+				</div><!--closing #subscribe -->
+			</div><!--closing #pre-footer -->
+			
+			<div id="footer">
+				<p>Copyright (c) 2018 solentpizzas.co.uk. All rights reserved.</p>
+			</div>
+			
+		</div><!--closing #wrapper-->
+	</body>
+</html>
